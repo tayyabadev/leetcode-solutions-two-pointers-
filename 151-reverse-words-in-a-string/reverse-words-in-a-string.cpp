@@ -22,7 +22,7 @@ public:
             s[r]=' ';
             r++;
             l=r;
-            i++;
+          
         }
         s.resize(r-1);
         return s;
