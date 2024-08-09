@@ -6,9 +6,8 @@ public:
         int l = 0;
         int r = 0;
         int i = 0;
-        string ans;
         while (i < n) {
-            while (i < n && s[i] == ' ') {
+            while ( s[i] == ' ') {
                 i++;
             }
             if (i == n) {
