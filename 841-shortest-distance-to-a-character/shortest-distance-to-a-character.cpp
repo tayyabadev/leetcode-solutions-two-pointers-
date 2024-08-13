@@ -1,18 +1,20 @@
 class Solution {
 public:
     vector<int> shortestToChar(string s, char c) {
-        int n = s.size(), pos = -n;
-        vector<int> res(n, 0);
-        for (int i = 0; i < n; ++i) {
-            if (s[i] == c){
-                pos = i;}
-            res[i] = i - pos;
+        vector<int> result(s.size(), 0);
+        int pos=-s.size();
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == c) {
+                pos = i;
+            }
+            result[i] = i - pos;
         }
-        for (int i = pos - 1; i >= 0; --i) {
-            if (s[i] == c){
-                pos = i;}
-            res[i] = min(res[i], pos - i);
+        for (int i = pos - 1; i >= 0; i--) {
+            if (s[i] == c) {
+                pos = i;
+            }
+            result[i] = min(result[i], abs(i - pos));
         }
-        return res;
+        return result;
     }
 };
