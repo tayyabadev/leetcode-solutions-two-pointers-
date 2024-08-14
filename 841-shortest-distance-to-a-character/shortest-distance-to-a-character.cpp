@@ -10,7 +10,7 @@ public:
             }
             arr.push_back(abs(pos - i));
         }
-        for (int i = pos; i >= 0; i--) {
+        for (int i = size-1; i >= 0; i--) {
             if (s[i] == c) {
                 pos = i;
             }
