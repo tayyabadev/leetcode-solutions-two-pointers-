@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool backspaceCompare(string s, string t) {
+    string check(string s) {
         string first = "";
         int count = 0;
         for (int i = s.size() - 1; i >= 0; i--) {
@@ -14,18 +14,7 @@ public:
                 first += s[i];
             }
         }
-        string sec = "";
-        count = 0;
-        for (int i = t.size() - 1; i >= 0; i--) {
-            if (t[i] == '#') {
-                count++;
-                continue;
-            }
-            if (count > 0) {
-                count--;
-            } else {
-                sec += t[i];
-            }
-        }return first==sec;
+        return first;
     }
+    bool backspaceCompare(string s, string t) { return check(s) == check(t); }
 };
